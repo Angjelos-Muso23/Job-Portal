@@ -8,7 +8,9 @@ Before setting up the project, ensure you have the following installed on your s
 - **Postman** (optional, for testing APIs)
 
 ## 1. Clone the Repository
+```bash
 git clone <repository-url>
+```
 
 ## 2. Configure the Database
 1. Start MySQL and create a new database:
