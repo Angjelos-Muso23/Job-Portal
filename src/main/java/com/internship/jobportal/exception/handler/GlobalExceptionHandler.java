@@ -6,6 +6,7 @@ import com.internship.jobportal.exception.custom.UnauthorizedAccessException;
 import io.jsonwebtoken.JwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -41,6 +42,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UsernameNotFoundException.class)
     public ResponseEntity<String> handleUsernameNotFound(UsernameNotFoundException ex) {
         return new ResponseEntity<>("Username not found: " + ex.getMessage(), HttpStatus.NOT_FOUND); // 404 Not Found
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<String> handleBadCredentials(BadCredentialsException ex) {
+        return new ResponseEntity<>("Invalid username or password.", HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(Exception.class)

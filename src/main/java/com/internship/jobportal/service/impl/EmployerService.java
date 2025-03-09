@@ -62,8 +62,8 @@ public class EmployerService implements IEmployerService {
 
     @Override
     public void createJob(String token, JobCreateResource jobsResource){
-        if (jobsResource.customId() == null) {
-            throw new IllegalArgumentException("Custom ID must not be null or empty.");
+        if (jobsResource.customId() == null || jobsResource.title() == null || jobsResource.description() == null) {
+            throw new IllegalArgumentException("Custom ID, title and description must not be null or empty.");
         }
 
         Optional<Job> existingJob = jobsRepository.findByCustomId(jobsResource.customId());
@@ -135,6 +135,10 @@ public class EmployerService implements IEmployerService {
 
     @Override
     public void createReview(String token, ReviewResource reviewResource) {
+        if (reviewResource.rating() < 0 || reviewResource.rating() > 5 || reviewResource.reason() == null) {
+            throw new IllegalArgumentException("Rating should be within range and reason must not be null or empty.");
+        }
+
         Job jobToReview = validateJob(token, reviewResource.jobCustomId(), "You can only review jobs you have created.");
 
         Review review = reviewMapper.toEntity(reviewResource);
