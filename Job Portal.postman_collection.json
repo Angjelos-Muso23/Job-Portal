@@ -1,0 +1,791 @@
+{
+	"info": {
+		"_postman_id": "f6dfc501-7ab5-425b-b75d-28b19cdf9024",
+		"name": "Job Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33185011"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QWRtaW4iLCJyb2xlIjoiUk9MRV9ST0xFX0FETUlOIiwiaWF0IjoxNzQxNDY1NzY3LCJleHAiOjE3NDE0NjkzNjd9.apuTZcuRLGxgJuf28vuvpOOf4sSpBJnPJNEU6MvZPCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users by role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QWRtaW4iLCJyb2xlIjoiUk9MRV9ST0xFX0FETUlOIiwiaWF0IjoxNzQxNDY3ODYyLCJleHAiOjE3NDE0NzE0NjJ9.DvsJihYBZ9McI6GBqFeKgfSGvgVr7wum8f33OwdqOnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/users/JOB_SEEKER",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"JOB_SEEKER"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QWRtaW4iLCJyb2xlIjoiUk9MRV9ST0xFX0FETUlOIiwiaWF0IjoxNzQxNDY1NzY3LCJleHAiOjE3NDE0NjkzNjd9.apuTZcuRLGxgJuf28vuvpOOf4sSpBJnPJNEU6MvZPCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/delete/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by username",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QWRtaW4iLCJyb2xlIjoiUk9MRV9ST0xFX0FETUlOIiwiaWF0IjoxNzQxNDY1NzY3LCJleHAiOjE3NDE0NjkzNjd9.apuTZcuRLGxgJuf28vuvpOOf4sSpBJnPJNEU6MvZPCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/delete/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/review/delete/id/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"review",
+								"delete",
+								"id",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employer",
+			"item": [
+				{
+					"name": "Create a job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNTU4MDMyLCJleHAiOjE3NDE1NjE2MzJ9.HDg-ogPwwm6UenUMmKApwxpcgCHngS8xOphiaqaiKOw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customId\": \"Job2\",  \r\n  \"title\": \"Software Developer2\",\r\n  \"description\": \"We are looking for a passionate software developer.\",\r\n  \"location\": \"London\",\r\n  \"createdAt\": \"2025-03-08T12:00:00Z\",\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNDgwMTM3LCJleHAiOjE3NDE0ODM3Mzd9.FZ2MeJNsscYckqXoEsZenVkGVfKEpFRpO10ab7XO4qM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs by title",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs by location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNDczMzU4LCJleHAiOjE3NDE0NzY5NTh9.5gpfGMFzWEZUKu7xDqIepbcAE5hfGybKjJHtY_7PJH0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs/location/New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs",
+								"location",
+								"New York"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all application for a job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNDgwMzgwLCJleHAiOjE3NDE0ODM5ODB9.RNmT3W4mb9RglFCSOFUxvHJMNDxcLYQS30fQkrS41iQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs/applications/Job1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs",
+								"applications",
+								"Job1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNTU4MDMyLCJleHAiOjE3NDE1NjE2MzJ9.HDg-ogPwwm6UenUMmKApwxpcgCHngS8xOphiaqaiKOw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rating\": 4.5,\r\n  \"comment\": \"Great job opportunity!\",\r\n  \"reason\": \"Fun\",\r\n  \"createdAt\": \"2025-03-09T12:00:00Z\",\r\n  \"jobCustomId\": \"Job2\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update application status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testSeeker\",\r\n    \"status\": \"ACCEPTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs/application/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs",
+								"application",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Seeker",
+			"item": [
+				{
+					"name": "Apply for a job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0U2Vla2VyIiwicm9sZSI6IlJPTEVfUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzQxNDg0NDk5LCJleHAiOjE3NDE0ODgwOTl9.dT05UqBitkwgop3vaqrYNDhsJ4dtNGisVYGw5yRsd8U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resumeUrl\": \"https://example.com/resume.pdf\",\r\n  \"appliedAt\": \"2025-03-09T12:00:00Z\",\r\n  \"jobCustomId\": \"Job1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/jobSeeker/apply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jobSeeker",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Resume",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0U2Vla2VyIiwicm9sZSI6IlJPTEVfUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzQxNDg3Mjg2LCJleHAiOjE3NDE0OTA4ODZ9.E1vXuYoz0VuVW9aThUF2r05QjC_gGK081WnyC1Q9RM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resumeUrl\": \"https://example.com/resume1.pdf\",\r\n  \"jobCustomId\": \"Job1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/jobSeeker/application/resume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jobSeeker",
+								"application",
+								"resume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all applications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNDgwMTM3LCJleHAiOjE3NDE0ODM3Mzd9.FZ2MeJNsscYckqXoEsZenVkGVfKEpFRpO10ab7XO4qM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all applications by job title",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all applications by status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0U2Vla2VyIiwicm9sZSI6IlJPTEVfUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzQxNDg5MzM0LCJleHAiOjE3NDE0OTI5MzR9.KUc5SLDoBc2GA-VBJqRS_CUydFzMaFaco6ln-TWFMY8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/jobSeeker/applications/status/REJECTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jobSeeker",
+								"applications",
+								"status",
+								"REJECTED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0U2Vla2VyIiwicm9sZSI6IlJPTEVfUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzQxNTI1MjcxLCJleHAiOjE3NDE1Mjg4NzF9.ounRZ-0GtRXvkoe958_E9Aj3Gj7Dou-S9Ev-rLtNe5w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/jobSeeker/jobs?page=0&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jobSeeker",
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/jobSeeker/jobs/title/Software Developer1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"jobSeeker",
+								"jobs",
+								"title",
+								"Software Developer1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs by location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNDczMzU4LCJleHAiOjE3NDE0NzY5NTh9.5gpfGMFzWEZUKu7xDqIepbcAE5hfGybKjJHtY_7PJH0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs/location/New York",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs",
+								"location",
+								"New York"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all jobs for an employer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0RW1wbG95ZXIiLCJyb2xlIjoiUk9MRV9ST0xFX0VNUExPWUVSIiwiaWF0IjoxNzQxNDgwMzgwLCJleHAiOjE3NDE0ODM5ODB9.RNmT3W4mb9RglFCSOFUxvHJMNDxcLYQS30fQkrS41iQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employer/jobs/applications/Job1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employer",
+								"jobs",
+								"applications",
+								"Job1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Get all reviews",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all reviews by rating",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"testEmployer\",\r\n  \"email\": \"testEmployer@employer.com\",\r\n  \"password\": \"employerTest\",\r\n  \"role\": \"EMPLOYER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"testSeeker\",\r\n  \"password\": \"seekerTest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
