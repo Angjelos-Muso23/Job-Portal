@@ -4,6 +4,5 @@ import java.util.Date;
 
 public record ApplicationResource(
         String resumeUrl,
-        Date appliedAt,
         String jobCustomId) {
 }

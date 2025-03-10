@@ -37,7 +37,6 @@ public class ApplicationMapper {
 
     public Application updateEntity(Application application, ApplicationResource applicationResource) {
         application.setResumeUrl(applicationResource.resumeUrl());
-        application.setAppliedAt(applicationResource.appliedAt());
         Optional<Job> jobOptional = jobsRepository.findByCustomId(applicationResource.jobCustomId());
         jobOptional.ifPresentOrElse(
                 application::setJob,

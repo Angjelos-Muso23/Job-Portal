@@ -22,6 +22,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,13 +46,14 @@ public class JobSeekerService implements IJobSeekerService {
 
     @Override
     public void createApplication( String token, ApplicationResource applicationResource) {
-        Optional<Job> seekerOptional = jobsRepository.findByCustomId(applicationResource.jobCustomId());
-        Job job = seekerOptional.orElseThrow(() -> new RuntimeException("Job with id " + applicationResource.jobCustomId() + " not found."));
-        if (applicationsRepository.existsByJob(job)){
-            throw new ResourceAlreadyExistsException("You have already applied for this job.");
-        }
+        Optional<Job> jobOptional = jobsRepository.findByCustomId(applicationResource.jobCustomId());
+        Job job = jobOptional.orElseThrow(() -> new ResourceNotFoundException("Job with id " + applicationResource.jobCustomId() + " not found."));
         Application application = applicationMapper.toEntity(applicationResource);
         User user = getUserFromToken(token);
+        if (applicationsRepository.existsByJobAndJobSeeker(job, user)){
+            throw new ResourceAlreadyExistsException("You have already applied for this job.");
+        }
+        application.setAppliedAt(new Date());
         application.setJobSeeker(user);
         application.setStatus(StatusEnum.PENDING);
         applicationsRepository.save(application);

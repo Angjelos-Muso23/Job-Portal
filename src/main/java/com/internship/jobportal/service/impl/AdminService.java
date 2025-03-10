@@ -58,6 +58,9 @@ public class AdminService implements IAdminService {
         if (user.isEmpty()) {
             throw new ResourceNotFoundException("User not found");
         }
+        if (user.get().getRole() == RoleEnum.ADMIN) {
+            throw new IllegalArgumentException("You can not delete an admin.");
+        }
         userRepository.deleteById(userId);
     }
 
@@ -67,6 +70,9 @@ public class AdminService implements IAdminService {
         Optional<User> user = userRepository.findByUsername(username);
         if (user.isEmpty()) {
             throw new ResourceNotFoundException("User not found");
+        }
+        if (user.get().getRole() == RoleEnum.ADMIN) {
+            throw new IllegalArgumentException("You can not delete an admin.");
         }
         userRepository.deleteByUsername(username);
     }

@@ -24,5 +24,5 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
 
     Optional<Application> findByJobSeekerAndJob(User jobSeeker, Job job);
 
-    boolean existsByJob(Job job);
+    boolean existsByJobAndJobSeeker(Job job, User jobSeeker);
 }
